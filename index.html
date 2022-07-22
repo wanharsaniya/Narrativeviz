@@ -47,11 +47,11 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-d3.csv("data.csv", function(error, data) {
+d3.csv("titanic_train.csv", function(error, data) {
 
   // convert all population to integer
   data.forEach(function(d) {
-    d.population = +d.population;
+    d.Survived = d.Survived;
   });
 
   // append a group
@@ -63,14 +63,14 @@ d3.csv("data.csv", function(error, data) {
   // append path, the pie for each age
   g.append("path")
       .attr("d", arc)
-      .style("fill", function(d) { return color(d.data.age); });
+      .style("fill", function(d) { return color(d.data.Sex); });
 
   // add text
   g.append("text")
       .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
       .attr("dy", ".35em")
       .style("text-anchor", "middle")
-      .text(function(d) { return d.data.age; });
+      .text(function(d) { return d.data.Sex; });
 
 });
 
