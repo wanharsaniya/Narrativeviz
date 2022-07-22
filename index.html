@@ -35,7 +35,7 @@
         }
 
         xScale.domain(data.map(function(d) { return d.Passenger_class; }));
-        yScale.domain([0, d3.max(data, function(d) { return d.Fare; })]);
+        yScale.domain([0, d3.max(data, function(d) { return d.Count; })]);
 
         g.append("g")
          .attr("transform", "translate(0," + height + ")")
@@ -58,14 +58,14 @@
          .attr("dy", "-5.1em")
          .attr("text-anchor", "end")
          .attr("stroke", "black")
-         .text("Fare");
+         .text("Count");
 
         g.selectAll(".bar")
          .data(data)
          .enter().append("rect")
          .attr("class", "bar")
          .attr("x", function(d) { return xScale(d.Passenger_class); })
-         .attr("y", function(d) { return yScale(d.Fare); })
+         .attr("y", function(d) { return yScale(d.count); })
          .attr("width", xScale.bandwidth())
          .attr("height", function(d) { return height - yScale(d.value); });
     });
