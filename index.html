@@ -47,12 +47,10 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-d3.csv("titanic_train.csv", function(error, data) {
+d3.csv("titanic_train.csv", function(error, data)
+       {
 
-  // convert all population to integer
-  data.forEach(function(d) {
-    d.Survived = d.Survived;
-  });
+ 
 
   // append a group
   var g = svg.selectAll(".arc")
