@@ -39,7 +39,7 @@ var pie = d3.layout.pie()
     // not sorting
     .sort(null)
     // set the pie chart value to population.
-    .value(function(d) { return d.Survived; });
+    .value(function(d) { return d.Count; });
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
