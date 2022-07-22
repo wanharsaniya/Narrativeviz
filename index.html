@@ -39,7 +39,7 @@ var pie = d3.layout.pie()
     // not sorting
     .sort(null)
     // set the pie chart value to population.
-    .value(function(d) { return d.Count; });
+    .value(function(d) { return d.population; });
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
@@ -47,7 +47,7 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-d3.csv("titanic_train.csv", function(error, data)
+d3.csv("age_aggre.csv", function(error, data)
        {
 
  
@@ -61,14 +61,14 @@ d3.csv("titanic_train.csv", function(error, data)
   // append path, the pie for each age
   g.append("path")
       .attr("d", arc)
-      .style("fill", function(d) { return color(d.data.Sex); });
+      .style("fill", function(d) { return color(d.data.age); });
 
   // add text
   g.append("text")
       .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
       .attr("dy", ".35em")
       .style("text-anchor", "middle")
-      .text(function(d) { return d.data.Sex; });
+      .text(function(d) { return d.data.age; });
 
 });
 
