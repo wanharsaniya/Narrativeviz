@@ -15,8 +15,8 @@ body {
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script>
  
-var width = 960,
-    height = 500,
+var width = 660,
+    height = 300,
     // find the min of width and height and devided by 2
     radius = Math.min(width, height) / 2;
 
@@ -71,7 +71,7 @@ d3.csv("age_aggre.csv", function(error, data)
       .text(function(d) { return d.data.age; });
 			
 			svg.append("g")
-               .attr("transform", "translate(" + (width / 2 - 120) + "," + 20 + ")")
+               .attr("transform", "translate(" + (width / 2 ) + "," + 20 + ")")
                .append("text")
                .text("age use statistics - Jan 2017")
                .attr("class", "title")
