@@ -29,13 +29,13 @@
     var g = svg.append("g")
                .attr("transform", "translate(" + 100 + "," + 100 + ")");
 
-    d3.csv("XYZ.csv", function(error, data) {
+    d3.csv("titanic_train.csv", function(error, data) {
         if (error) {
             throw error;
         }
 
-        xScale.domain(data.map(function(d) { return d.passengerclass; }));
-        yScale.domain([0, d3.max(data, function(d) { return d.fare; })]);
+        xScale.domain(data.map(function(d) { return d.Passenger_class; }));
+        yScale.domain([0, d3.max(data, function(d) { return d.Fare; })]);
 
         g.append("g")
          .attr("transform", "translate(0," + height + ")")
@@ -64,8 +64,8 @@
          .data(data)
          .enter().append("rect")
          .attr("class", "bar")
-         .attr("x", function(d) { return xScale(d.passengerclass); })
-         .attr("y", function(d) { return yScale(d.fare); })
+         .attr("x", function(d) { return xScale(d.Passenger_class); })
+         .attr("y", function(d) { return yScale(d.Fare); })
          .attr("width", xScale.bandwidth())
          .attr("height", function(d) { return height - yScale(d.value); });
     });
