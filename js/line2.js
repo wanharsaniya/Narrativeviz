@@ -32,7 +32,7 @@ d3.csv("connectedscatter.csv",
 
   // When reading the csv, I must format variables:
   function(d){
-    return { date : d3.timeParse("%y-%m-%d")(d.date), value : d.value }
+    return { date : d3.timeParse("%Y-%m-%d")(d.date), value : d.value }
   }).then(
 
   // Now I can use this dataset:
@@ -103,62 +103,4 @@ d3.csv("connectedscatter.csv",
         .on("mouseover", mouseover)
         .on("mousemove", mousemove)
         .on("mouseleave", mouseleave)
-      
-      svg.append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 0 - margin.left)
-      .attr("x",0 - (height / 2))
-      .attr("dy", "1em")
-      .style("text-anchor", "middle")
-      .text("Earnings");
-      
-      var parseDate = function(d){ return d3.timeParse("%Y-%m-%d")(d)}
-      const annotations = [
-       // first annotation
-        {
-      note: {
-        label: "t7 Earnings plummeted",
-        title: "April 17th - 19th",
-        wrap: 150,  // try something smaller to see text split in several lines
-        padding: 10   // More = text lower
-      
-     },
-     color: ["#cc0000"],
-     x: x(parseDate('2016-01-01')),
-     y: y(8197),
-     dy: -100,
-     dx: -5,
-     subject: {
-      radius: 50,
-      radiusPadding: 5
-    },
-    type: d3.annotationCalloutCircle,
-    },
-    // second annotation
-        {
-      note: {
-        label: "Strong Recovery",
-        title: "April 20th",
-        wrap: 150,  // try something smaller to see text split in several lines
-        padding: 10   // More = text lower
-      
-     },
-     color: [" #00b300"],
-     x: x(parseDate('2017-01-01')),
-     y: y(8880.23),
-     dy: 40,
-     dx: 40,
-    type: d3.annotationCalloutElbow,
-    },
-    
-      ]
-      
-      window.makeAnnotations = d3.annotation()
-        .annotations(annotations)
-     
-        svg.append("g")
-    .call(makeAnnotations)
-      
 })
-
-
