@@ -41,7 +41,7 @@ d3.csv("connectedscatter.csv",
     // Add X axis --> it is a date format
     var x = d3.scaleTime()
       .domain(d3.extent(data, function(d) { return d.date; }))
-      .range([ 0, width ]);
+      .range([ 0, width + 50 ]);
     svg.append("g")
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x));
