@@ -28,7 +28,7 @@ var svg = d3.select("#my_line")
       
 
 //Read the data
-d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/connectedscatter.csv",
+d3.csv("connectedscatter.csv",
 
   // When reading the csv, I must format variables:
   function(d){
