@@ -32,7 +32,7 @@ d3.csv("connectedscatter.csv",
 
   // When reading the csv, I must format variables:
   function(d){
-    return { date : d3.timeParse("%b-%y")(d.date), value : d.value }
+    return { date : d3.timeParse("%Y-%m-%d")(d.date), value : d.value }
   }).then(
 
   // Now I can use this dataset:
