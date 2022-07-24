@@ -54,7 +54,7 @@ d3.csv("countries.csv",
 	const annotations = [
     {
     note: {
-      label: "Nevada's profits were greatly influenced by the sudden increase in demand for home renovations",
+      label: "Nevada's profits were due to by the sudden increase in demand for home renovations",
       title: "Nevada overall profit",
       wrap: 200,  // try something smaller to see text split in several lines
       padding: 10   // More = text lower
