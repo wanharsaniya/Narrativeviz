@@ -32,7 +32,7 @@ d3.csv("connectedscatter.csv",
 
   // When reading the csv, I must format variables:
   function(d){
-    return { date : d3.timeParse("%y-%m")(d.date), value : d.value }
+    return { date : d3.timeParse("%b-%y")(d.date), value : d.value }
   }).then(
 
   // Now I can use this dataset:
@@ -43,7 +43,7 @@ d3.csv("connectedscatter.csv",
       .domain(d3.extent(data, function(d) { return d.date; }))
       .range([ 0, width ]);
     svg.append("g")
-      .attr("transform", "translate(0," + height + ")")
+      .attr("transform", "translate(0," + height + ")",rotate(45))
       .call(d3.axisBottom(x));
 
     // Add Y axis
