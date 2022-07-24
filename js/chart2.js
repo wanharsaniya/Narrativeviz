@@ -47,14 +47,14 @@ d3.csv("/data_files/Profit_countries.csv",
     .attr("y", function(d) { return y(d.Country); })
     .attr("width", function(d) { return x(d.Value); })
     .attr("height", y.bandwidth() )
-    .attr("fill", function(d){ if (d.Country == 'France') return "#cc0000" ; else return "#a3a3c2"})
+    .attr("fill", function(d){ if (d.Country == 'Nevada') return "#cc0000" ; else return "#a3a3c2"})
 
 
     // Features of the annotation
 	const annotations = [
     {
     note: {
-      label: "Thanks to its marketing policy, in 2021 France has reached the third position.",
+      label: "Thanks to its marketing policy, in 2021 Nevada has reached the third position.",
       title: "France product sales",
       wrap: 200,  // try something smaller to see text split in several lines
       padding: 10   // More = text lower
