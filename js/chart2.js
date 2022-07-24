@@ -13,7 +13,7 @@ var svg = d3.select("#my_chart")
           "translate(" + margin.left + "," + margin.top + ")");
 
 // Parse the Data
-d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum_header.csv",
+d3.csv("/data_files/Profit_countries.csv",
 	function(d){ return {Country: d.Country, Value: +d.Value}}
 ).then( function(data) {
 
