@@ -43,7 +43,7 @@ d3.csv("connectedscatter.csv",
       .domain(d3.extent(data, function(d) { return d.date; }))
       .range([ 0, width ]);
     svg.append("g")
-      .attr("transform", "translate(0," + height + ")","rotate(45)")
+      .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x));
 
     // Add Y axis
