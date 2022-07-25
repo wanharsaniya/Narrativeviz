@@ -32,12 +32,12 @@ var svg = d3.select("#my_dataviz")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
 // create 2 data_set
-var data1 = {a: 32, b: 20, c:16, d:18, e:14}
-var data2 = {a: 10, b: 16, c:20, d:14, e:40}
+var data1 = {Books: 32, Tables: 20, Cases:16, Beds:18, Rings:14}
+var data2 = {Mouse: 10, Copiers: 16, Speaker:20, Monitor:14, Keyboard:40}
 
 // set the color scale
 var color = d3.scaleOrdinal()
-  .domain(data)
+  .domain(["a", "b", "c", "d", "e"])
   .range(['#ffd384','#94ebcd','#fbaccc','#d3e0ea','#fa7f72']);
     
  text.exit()
