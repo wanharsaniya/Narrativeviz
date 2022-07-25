@@ -52,6 +52,16 @@ function update(data) {
   var arcGenerator = d3.arc()
   .innerRadius(0)
   .outerRadius(radius)
+  
+  svg
+  .selectAll('mySlices')
+  .data(data_ready)
+  .enter()
+  .append('text')
+  .text(function(d){ return "grp " + d.data.key})
+  .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
+  .style("text-anchor", "middle")
+  .style("font-size", 17)
 
   // map to data
   var u = svg.selectAll("path")
@@ -71,15 +81,7 @@ function update(data) {
     .style("opacity", 1)
  
     // Now add the annotation. Use the centroid method to get the best coordinates
-u
-  .selectAll('mySlices')
-  .data(data_ready)
-  .enter()
-  .append('text')
-  .text(function(d){ return "grp " + d.data.key})
-  .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
-  .style("text-anchor", "middle")
-  .style("font-size", 17)
+
     
   // remove the group that is not present anymore
   u
