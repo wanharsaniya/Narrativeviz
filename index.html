@@ -61,8 +61,7 @@ function update(data)
   .style("text-anchor", "middle")
   .style("font-size", 17)
   
-  text.exit()
-		.remove();
+  
 
   // map to data
   var u = svg.selectAll("path")
@@ -88,7 +87,8 @@ function update(data)
   u
     .exit()
     .remove()
-   
+   text.exit()
+  .remove();
 }
 
 // Initialize the plot with the first dataset
