@@ -48,6 +48,10 @@ function update(data) {
     .value(function(d) {return d.value; })
     .sort(function(a, b) { console.log(a) ; return d3.ascending(a.key, b.key);} ) // This make sure that group order remains the same in the pie chart
   var data_ready = pie(d3.entries(data))
+  
+  var arcGenerator = d3.arc()
+  .innerRadius(0)
+  .outerRadius(radius)
 
   // map to data
   var u = svg.selectAll("path")
@@ -60,7 +64,7 @@ function update(data) {
     .merge(u)
     .transition()
     .duration(1000)
-    .attr('d', d3.arc().innerRadius(0).outerRadius(radius))
+    .attr('d', arcGenerator)
     .attr('fill', function(d){ return(color(d.data.key)) })
     .attr("stroke", "white")
     .style("stroke-width", "2px")
