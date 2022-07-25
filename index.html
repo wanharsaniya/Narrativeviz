@@ -4,8 +4,13 @@
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v4.js"></script>
 
+<body>
+	<h1>Sales per category from 2014 to 2017 </h1>
+	<h2>Sales per category from 2014 to 2017 </h2>
+	<h3>"#C9D6DF"fru "#F7EECF" </h3>
+	<p>The Super store sales analysis reveals that top perfroming cateogry was Furniture over the years </p>
 
-
+ </body>
 <!-- Add 2 buttons -->
 <button onclick="update(data1)">Furniture category</button>
 <button onclick="update(data2)">Technology category</button>
@@ -35,7 +40,7 @@ var svg = d3.select("#my_dataviz")
 // create 2 data_set
 var data1 = {Books: 32, Tables: 20, Cases:16, Beds:18, Chairs:14}
 var data2 = {Mouse: 15, Copiers: 16, Speaker:20, Monitor:14, Keyboard:35}
-var data3 = {Paper: 15, Binders: 16, Envelopes:20, Supplies:14, Art:35}
+var data3 = {Paper: 15, Binders: 16, Storage:20, Supplies:14, Art:35}
 
 // set the color scale
 var color = d3.scaleOrdinal()
