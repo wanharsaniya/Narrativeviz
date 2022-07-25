@@ -51,7 +51,7 @@ function update(data)
   
   var arcGenerator = d3.arc().innerRadius(0).outerRadius(radius)
   
-  svg
+  var text =svg
   .selectAll('mySlices')
   .data(data_ready)
   .enter()
@@ -60,6 +60,9 @@ function update(data)
   .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
   .style("text-anchor", "middle")
   .style("font-size", 17)
+  
+  text.exit()
+		.remove();
 
   // map to data
   var u = svg.selectAll("path")
