@@ -9,6 +9,7 @@
 <!-- Add 2 buttons -->
 <button onclick="update(data1)">Furniture category</button>
 <button onclick="update(data2)">Technology category</button>
+<button onclick="update(data3)">Office Supplies category</button>
 
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
@@ -34,6 +35,7 @@ var svg = d3.select("#my_dataviz")
 // create 2 data_set
 var data1 = {Books: 32, Tables: 20, Cases:16, Beds:18, Chairs:14}
 var data2 = {Mouse: 15, Copiers: 16, Speaker:20, Monitor:14, Keyboard:35}
+var data3 = {Paper: 15, Binders: 16, Envelopes:20, Supplies:14, Art:35}
 
 // set the color scale
 var color = d3.scaleOrdinal()
