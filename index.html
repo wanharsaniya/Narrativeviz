@@ -63,6 +63,10 @@ function update(data) {
     .attr('d', d3.arc()
       .innerRadius(0)
       .outerRadius(radius)
+          .append("text")
+          .text(function(d) { return d.data+'('+'%)'; })
+            .style("font-family", "arial")
+           .style("font-size", 15)
     )
     .attr('fill', function(d){ return(color(d.data.key)) })
     .attr("stroke", "white")
@@ -74,17 +78,17 @@ function update(data) {
     .exit()
     .remove()
     
-    var label = d3.arc()
-                      .outerRadius(radius)
-                      .innerRadius(0);
+    //var label = d3.arc()
+      //                .outerRadius(radius)
+        //              .innerRadius(0);
             
-        arc.append("text")
-           .attr("transform", function(d) { 
-                    return "translate(" + label.centroid(d) + ")"; 
-            })
-           .text(function(d) { return d.data.name+'('+'%)'; })
-           .style("font-family", "arial")
-           .style("font-size", 15);
+      //  arc.append("text")
+        //   .attr("transform", function(d) { 
+          //          return "translate(" + label.centroid(d) + ")"; 
+           // })
+      //     .text(function(d) { return d.data.name+'('+'%)'; })
+        //   .style("font-family", "arial")
+          // .style("font-size", 15);
    
     
     
