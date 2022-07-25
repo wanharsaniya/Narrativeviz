@@ -45,6 +45,8 @@ var color = d3.scaleOrdinal()
 // A function that create / update the plot for a given variable:
 function update(data)
 {
+    text.exit()
+    .remove();
   // Compute the position of each group on the pie:
   var pie = d3.pie()
               .value(function(d) {return d.value; })
@@ -52,10 +54,6 @@ function update(data)
   var data_ready = pie(d3.entries(data))
   
   var arcGenerator = d3.arc().innerRadius(0).outerRadius(radius)
-  
-  
-  
-  
 
   // map to data
   var u = svg.selectAll("path")
