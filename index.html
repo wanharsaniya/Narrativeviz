@@ -40,8 +40,7 @@ var color = d3.scaleOrdinal()
   .domain(["a", "b", "c", "d", "e"])
   .range(['#ffd384','#94ebcd','#fbaccc','#d3e0ea','#fa7f72']);
     
- text.exit()
-    .remove();
+ 
 
 // A function that create / update the plot for a given variable:
 function update(data)
@@ -82,6 +81,8 @@ var text =svg
   .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
   .style("text-anchor", "middle")
   .style("font-size", 17)
+    .exit()
+    .remove()
  
  
    
