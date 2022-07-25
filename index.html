@@ -73,7 +73,21 @@ function update(data) {
   u
     .exit()
     .remove()
-
+    
+    var label = d3.arc()
+                      .outerRadius(radius)
+                      .innerRadius(0);
+            
+        arc.append("text")
+           .attr("transform", function(d) { 
+                    return "translate(" + label.centroid(d) + ")"; 
+            })
+           .text(function(d) { return d.data.name+'('+'%)'; })
+           .style("font-family", "arial")
+           .style("font-size", 15);
+   
+    
+    
 }
 
 // Initialize the plot with the first dataset
