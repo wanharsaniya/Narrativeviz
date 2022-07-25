@@ -40,18 +40,7 @@ var color = d3.scaleOrdinal()
   .domain(["a", "b", "c", "d", "e"])
   .range(['#ffd384','#94ebcd','#fbaccc','#d3e0ea','#fa7f72']);
     
- var text =svg
-  .selectAll('mySlices')
-  .data(data_ready)
-  .enter()
-  .append('text')
-  .text(function(d){ return "grp " + d.data.key})
-  .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
-  .style("text-anchor", "middle")
-  .style("font-size", 17)
  
- text.exit()
-  .remove();
 
 // A function that create / update the plot for a given variable:
 function update(data)
@@ -86,7 +75,17 @@ function update(data)
     .style("opacity", 1)
  
     // Now add the annotation. Use the centroid method to get the best coordinates
-
+var text =svg
+  .selectAll('mySlices')
+  .data(data_ready)
+  .enter()
+  .append('text')
+  .text(function(d){ return "grp " + d.data.key})
+  .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
+  .style("text-anchor", "middle")
+  .style("font-size", 17)
+ 
+ 
    
      
   // remove the group that is not present anymore
@@ -98,5 +97,7 @@ function update(data)
 
 // Initialize the plot with the first dataset
 update(data1)
+text.exit()
+  .remove();
 
 </script>
