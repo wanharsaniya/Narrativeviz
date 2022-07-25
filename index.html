@@ -60,43 +60,28 @@ function update(data) {
     .merge(u)
     .transition()
     .duration(1000)
-    .attr('d', d3.arc()
-      .innerRadius(0)
-      .outerRadius(radius)
-      )
-       
-    
+    .attr('d', d3.arc().innerRadius(0).outerRadius(radius))
     .attr('fill', function(d){ return(color(d.data.key)) })
     .attr("stroke", "white")
     .style("stroke-width", "2px")
     .style("opacity", 1)
  
-    arc.append("text")
-           .attr("transform", function(d) { 
-                    return "translate(" + label.centroid(d) + ")"; 
-            })
-           .text(function(d) { return d.data; })
-           .style("font-family", "arial")
-           .style("font-size", 15);
+    // Now add the annotation. Use the centroid method to get the best coordinates
+svg
+  .selectAll('mySlices')
+  .data(data_ready)
+  .enter()
+  .append('text')
+  .text(function(d){ return "grp " + d.data.key})
+  .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
+  .style("text-anchor", "middle")
+  .style("font-size", 17)
+    
   // remove the group that is not present anymore
   u
     .exit()
     .remove()
-    
-    //var label = d3.arc()
-      //                .outerRadius(radius)
-        //              .innerRadius(0);
-            
-      //  arc.append("text")
-        //   .attr("transform", function(d) { 
-          //          return "translate(" + label.centroid(d) + ")"; 
-           // })
-      //     .text(function(d) { return d.data.name+'('+'%)'; })
-        //   .style("font-family", "arial")
-          // .style("font-size", 15);
    
-    
-    
 }
 
 // Initialize the plot with the first dataset
