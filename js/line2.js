@@ -1,7 +1,7 @@
-// set the dimensions and margins of the graph
-var margin = {top: 10, right: 30, bottom: 30, left: 60},
-    width = 460 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+// set the dimensions and margins of the graph 10,30,30,60
+var margin = {top: 20, right: 40, bottom: 40, left: 70},
+    width = 660 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
     
 // create a tooltip
     var Tooltip = d3.select("#my_line")
