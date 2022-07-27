@@ -137,7 +137,7 @@ d3.csv("connectedscatter.csv",
     // second annotation
         {
       note: {
-        label: "Strong Recovery",
+        label: "Strong Recovery from previous losses",
         title: "July 2015",
         wrap: 150,  // try something smaller to see text split in several lines
         padding: 10   // More = text lower
