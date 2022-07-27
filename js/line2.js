@@ -110,15 +110,15 @@ d3.csv("connectedscatter.csv",
       .attr("x",0 - (height / 2))
       .attr("dy", "1em")
       .style("text-anchor", "middle")
-      .text("Earnings");
+      .text("Profits");
       
       var parseDate = function(d){ return d3.timeParse("%Y-%m-%d")(d)}
       const annotations = [
        // first annotation
         {
       note: {
-        label: "ttEarnings plummeted",
-        title: "April 17th - 19th",
+        label: "Profits plummeted",
+        title: "Oct 2014 - Jan 2015",
         wrap: 150,  // try something smaller to see text split in several lines
         padding: 10   // More = text lower
       
@@ -138,7 +138,7 @@ d3.csv("connectedscatter.csv",
         {
       note: {
         label: "Strong Recovery",
-        title: "April 20th",
+        title: "July 2015",
         wrap: 150,  // try something smaller to see text split in several lines
         padding: 10   // More = text lower
       
