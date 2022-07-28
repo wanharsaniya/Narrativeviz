@@ -6,7 +6,7 @@
 
 <body>
 	<h1> SUPERSTORE PERFORMANCE ANALYSIS  </h1>
-	<h2> The products in Superstore have 3 categories : Furniture , Technology and Office Supplies </h2>
+	<h2> The products in Superstore fall under 3 categories : Furniture , Technology and Office Supplies </h2>
 	<h3> Profit distribution among the Sub-categories belonging to the above mentioned cateogries </h3>
 	<p>The Super store sales analysis reveals that top perfroming cateogry was Furniture over the years </p>
 
@@ -38,9 +38,9 @@ var svg = d3.select("#my_dataviz")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
 // create 2 data_set
-var data1 = {Books: 32, Tables: 20, Cases:16, Beds:18, Chairs:14}
+var data1 = {Beds: 10, Tables: 42, Cases:16, Stools:18, Chairs:14}
 var data2 = {Mouse: 15, Copiers: 16, Speaker:20, Monitor:14, Keyboard:35}
-var data3 = {Paper: 10, Binders: 25, Storage:20, Supplies:35, Art:10}
+var data3 = {Paper: 35, Binders: 20, Storage:20, Supplies:15, Art:10}
 
 // set the color scale
 var color = d3.scaleOrdinal()
