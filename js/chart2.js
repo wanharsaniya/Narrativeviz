@@ -50,6 +50,15 @@ d3.csv("countries.csv",
     .attr("fill", function(d){ if (d.Country == 'Nevada') return "#cc0000" ; else return "#a3a3c2"})
 
 
+	svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("States in USA ");
+	
+	
     // Features of the annotation
 	const annotations = [
     {
