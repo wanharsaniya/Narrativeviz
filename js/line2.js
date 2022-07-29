@@ -118,7 +118,7 @@ d3.csv("connectedscatter.csv",
         {
       note: {
         label: "Profits plummeted",
-        title: "Oct 2014 - Jan 2015",
+        title: "Oct 2014 - Dec 2014",
         wrap: 150,  // try something smaller to see text split in several lines
         padding: 10   // More = text lower
       
