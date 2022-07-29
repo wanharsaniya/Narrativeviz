@@ -51,8 +51,12 @@ var color = d3.scaleOrdinal()
   .domain(["a", "b", "c", "d", "e"])
   .range(['#ffd384','#94ebcd','#fbaccc','#d3e0ea','#fa7f72']);
     
- text.exit()
-    .remove();
+ 
+	
+	function refresh(milliseconds) {
+	console.log("Refreshing");
+	setTimeout("location.reload(true);", milliseconds);
+}
 
 // A function that create / update the plot for a given variable:
 function update(data)
@@ -94,15 +98,13 @@ var text =svg
   .style("text-anchor", "middle")
   .style("font-size", 14)
     
- window.setTimeout(function () {
-  window.location.reload();
-}, 30000);
+ 
  
    
       
   // remove the group that is not present anymore
-  u.exit().remove()
-  
+  //u.exit().remove()
+  refresh(1000);
 }
 
 // Initialize the plot with the first dataset
