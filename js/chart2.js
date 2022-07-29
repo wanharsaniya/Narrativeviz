@@ -47,7 +47,7 @@ d3.csv("countries.csv",
     .attr("y", function(d) { return y(d.Country); })
     .attr("width", function(d) { return x(d.Value); })
     .attr("height", y.bandwidth() )
-    .attr("fill", function(d){ if (d.Country == 'Nevada') return "#cc0000" ; else return "#a3a3c2"})
+    .attr("fill", function(d){ if (d.Country == 'Nevada') return "#00008B" ; else return "#a3a3c2"})
 
 
 	svg.append("text")
@@ -69,7 +69,7 @@ d3.csv("countries.csv",
       padding: 10   // More = text lower
       
     },
-    color: ["#cc0000"],
+    color: ["#00008B"],
     x: x(2500),
     y: 100,
     dy: 100,
