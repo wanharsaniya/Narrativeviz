@@ -8,7 +8,7 @@
 	
 	<h1> SUPERSTORE PROFIT ANALYSIS   </h1>
 	<h2> The products in Superstore fall under 3 categories : Furniture , Technology and Office Supplies </h2>
-	<h3> Profit distribution among the Sub-categories belonging to the above mentioned categories </h3>
+	<h3> Profit distribution among their Sub-categories  </h3>
 	<p> The top performing sub-category is Bookcases(40%) under Furniture and least performing is Beds(12%) </p>
 	<p> The top performing sub-category is Accessories(34%) under Technology and least performing is Copiers(14%) </p>
 	<p> The top performing sub-category is Paper(35%) under Office Supplies and least performing is Art(9%) </p>
@@ -17,7 +17,7 @@
  </body>
 <!-- Add 3 buttons -->
 <button onclick="update(data1)">Furniture category</button>
-<button onclick="refresh(1000)""update(data2)">Technology category</button>
+<button onclick="refresh(1000)";"update(data2)">Technology category</button>
 <button onclick="update(data3)">Office Supplies category</button>
 
 <!-- Create a div where the graph will take place -->
@@ -61,7 +61,7 @@ var color = d3.scaleOrdinal()
 // A function that create / update the plot for a given variable:
 function update(data)
 {
-   
+    refresh(1500);
   // Compute the position of each group on the pie:
   var pie = d3.pie()
               .value(function(d) {return d.value; })
@@ -104,7 +104,7 @@ var text =svg
       
   // remove the group that is not present anymore
   //u.exit().remove()
-  refresh(1500);
+ 
 }
 
 // Initialize the plot with the first dataset
