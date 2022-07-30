@@ -17,7 +17,7 @@
  </body>
 <!-- Add 3 buttons -->
 <button onclick="update(data1)">Furniture category</button>
-<button onclick="refresh(1000)";"update(data2)">Technology category</button>
+<button onclick="update(data2)">Technology category</button>
 <button onclick="update(data3)">Office Supplies category</button>
 
 <!-- Create a div where the graph will take place -->
@@ -55,13 +55,12 @@ var color = d3.scaleOrdinal()
 	
 	function refresh(milliseconds) {
 	console.log("Refreshing");
-	setTimeout("location.reload(true);", milliseconds);
-}
+	setTimeout("location.reload(true);", milliseconds);}
 
 // A function that create / update the plot for a given variable:
 function update(data)
 {
-    refresh(1500);
+    refresh(15000);
   // Compute the position of each group on the pie:
   var pie = d3.pie()
               .value(function(d) {return d.value; })
